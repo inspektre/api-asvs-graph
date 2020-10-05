@@ -1,0 +1,10 @@
+type Asvs {
+  stage: String!
+  serial: String!
+  L1: Boolean!
+  L2: Boolean!
+  L3: Boolean!
+  cweId: Int
+  nistId: String
+  description: String!
+}

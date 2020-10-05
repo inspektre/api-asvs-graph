@@ -9,7 +9,7 @@ dotenv.config();
 
 // Add query and mutations - to override generated Schema
 const augmentedSchema = makeAugmentedSchema({
-  typeDefs
+  typeDefs,
 });
 
 const driver = neo4j.driver(

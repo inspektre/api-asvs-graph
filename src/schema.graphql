@@ -9,6 +9,7 @@ type Asvs {
   description: String!
 }
 
+
 type Query {
   GetArchCrypto: [Asvs] @cypher(statement: """
     MATCH (a:Asvs {stage: 'Architecture'})<-[r:Verify_Cryptography]-(b:Asvs) RETURN a

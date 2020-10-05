@@ -8,3 +8,12 @@ type Asvs {
   nistId: String
   description: String!
 }
+
+type Query {
+  GetArchCrypto: [Asvs] @cypher(statement: """
+    MATCH (a:Asvs {stage: 'Architecture'})<-[r:Verify_Cryptography]-(b:Asvs) RETURN a
+  """)
+  GetCryptoArch: [Asvs] @cypher(statement: """
+    MATCH (a:Asvs)-[r:Verify_Architecture]->(b:Asvs {stage: 'Cryptography'}) RETURN b
+  """)
+}
